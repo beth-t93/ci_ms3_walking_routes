@@ -18,11 +18,15 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    routes = mongo.db.walking_routes.find()
-    return render_template("index.html", routes=routes)
+    """
+    Returns to index.html
+    """
+    return render_template("index.html")
+
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+

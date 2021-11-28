@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <title>Walking Routes</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
-    <!-- Navbar -->
-      <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Walking Routes</a>
-      <ul class="left hide-on-med-and-down">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Sign up</a></li>
-        <li><a href="#">Log in</a></li>
-      </ul>
-    </div>
-  </nav>
+    {% for route in routes %}
+        {{ routes.route_name }}<br>
+        {{ routes.start_point }}<br>
+        {{ routes.end_point }}<br>
+        {{ routes.terrain }}<br>
+        {{ routes.description }}<br>
+        {{ routes.difficulty }}<br>
+    {% endfor %}
 
-
-</body>
-</html>
+{% endblock %}
