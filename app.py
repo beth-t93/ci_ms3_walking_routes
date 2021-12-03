@@ -1,20 +1,28 @@
+
 import os
+
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-if os.path.exists("env.py"):
-    import env
+from os import environ, path
+from dotenv import load_dotenv
+from pathlib import Path
+
+
+env_path = Path(".") / ".env"
+load_dotenv(dotenv_path=env_path)
+
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+IP = os.environ.get("IP")
+PORT = os.environ.get("PORT")
+MONGO_URI = os.environ.get("MONGO_URI")
+MONGO_DBNAME = os.environ.get("MONGO_DBNAME")
 
 
 app = Flask(__name__)
-
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
-
 mongo = PyMongo(app)
-
 
 @app.route("/")
 def index():
