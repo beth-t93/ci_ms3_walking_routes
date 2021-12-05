@@ -1,0 +1,21 @@
+/* Global Styling */
+:root {
+    background-color: #354F52;
+}
+
+.navbar {
+    background-color: #2F3E46;
+    text-decoration: none;
+    padding-bottom: 1rem;
+}
+
+.card {
+    margin: none;
+    background: #CAD2C5;
+    padding: 0.5rem;
+}
+
+.info-btn {
+    background-color: #2F3E46;
+    color: #CAD2C5;
+}
