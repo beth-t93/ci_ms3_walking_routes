@@ -1,16 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="card" style="width: 18rem;">
-        {% for trail in trails %}
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ trails.trail_name}}</h5>
-            <p class="card-text">{{ trails.trail_description }}</p>
-            <a href="#" class="btn btn-primary">More Information</a>
+    
+    <div class="container">
+    <div class="row">
+        {% for route in routes %}
+        <div class="card-control col-12 col-md-6 col-lg-4">
+            <div class="card shadow-effect">
+                <h5 class="card-title text-center main-font secondary-color">{{ trails.trail_name }}</h5>
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <p class="card-text main-font">{{ trails.trails_description }}</p>
+                </div>
+                <div class="info-btn">
+                    <button type="button" class="btn">More Information</button>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
+</div>
     
-
 {% endblock %}
