@@ -9,19 +9,17 @@ from os import environ, path
 from dotenv import load_dotenv
 from pathlib import Path
 
-
-env_path = Path(".") / ".env"
+env_path = Path(".env")
 load_dotenv(dotenv_path=env_path)
 
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
-IP = os.environ.get("IP")
-PORT = os.environ.get("PORT")
-MONGO_URI = os.environ.get("MONGO_URI")
-MONGO_DBNAME = os.environ.get("MONGO_DBNAME")
-
-
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["IP"] = os.environ.get("IP")
+app.config["PORT"] = os.environ.get("PORT")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+
 mongo = PyMongo(app)
 
 @app.route("/")
