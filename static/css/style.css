@@ -34,3 +34,7 @@
     max-width: 5rem;
     margin: auto;
 }
+
+.flashes h4 {
+    line-height: 3;
+}
