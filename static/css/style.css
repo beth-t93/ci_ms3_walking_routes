@@ -9,6 +9,7 @@
     padding-bottom: 1rem;
 }
 
+/* index.html */
 .card {
     margin: none;
     background: #CAD2C5;
@@ -18,4 +19,18 @@
 .info-btn {
     background-color: #2F3E46;
     color: #CAD2C5;
+}
+
+/* Signup page */
+.signup {
+    margin: auto;
+    padding: 2rem 0rem;
+    background: none;
+    max-width: 40rem;
+}
+
+.btn {
+    background-color: #354F52;
+    max-width: 5rem;
+    margin: auto;
 }
