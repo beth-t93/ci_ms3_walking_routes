@@ -25,6 +25,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 
+''' Takes users to the main page index.html '''
 @app.route("/")
 def trails():
     print(os.environ.get("MONGO_URI"))
@@ -33,6 +34,7 @@ def trails():
     return render_template("index.html", trails=trails)
 
 
+''' Allows users to register an account, also checks to see if the username has already been used '''
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
@@ -49,43 +51,35 @@ def register():
 
     return render_template('register.html')
 
-'''
-@app.route('/login', methods=['POST'])
-def login():
-    users = mongo.db.users
-    login_user = users.find_one({'name' : request.form['username']})
 
-    if login_user:
-        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-            session['username'] = request.form['username']
-            return redirect(url_for('trails'))
-
-    return 'Invalid username/password combination'
-'''
-
+''' Allows an exisiting user to login, will also check for correct username and password'''
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
             if bcrypt.hashpw(request.form['pass'].encode('utf-8'), existing_user['password'].encode('utf-8')) == existing_user['password'].encode('utf-8'):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
             else:
-                # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("myaccount.html")
+
+
+''' Will take users to their profile page containg their account information '''
+@app.route("/myaccount/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("myaccount.html", username=username)
 
 
 if __name__ == "__main__":
