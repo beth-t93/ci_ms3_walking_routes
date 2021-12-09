@@ -18,23 +18,21 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["IP"] = os.environ.get("IP")
 app.config["PORT"] = os.environ.get("PORT")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 
 mongo = PyMongo(app)
-
-@app.route("/")
-def index():
-    """
-    Returns to index.html
-    """
-    return render_template("index.html")
 
 
 @app.route("/")
 def trails():
+    print(os.environ.get("MONGO_URI"))
     trails = list(mongo.db.trails.find())
+    print(trails)
     return render_template("index.html", trails=trails)
 
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    return render_template("signup.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
