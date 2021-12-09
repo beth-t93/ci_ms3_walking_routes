@@ -21,20 +21,18 @@
     color: #CAD2C5;
 }
 
-/* Signup page */
-.signup {
+/* register.html */
+.register-form {
     margin: auto;
     padding: 2rem 0rem;
-    background: none;
-    max-width: 40rem;
-}
+    background: none;}
 
-.btn {
+.register-form button {
     background-color: #354F52;
     max-width: 5rem;
     margin: auto;
 }
 
-.flashes h4 {
-    line-height: 3;
+.form-group {
+    padding: 0.5rem;
 }
