@@ -71,15 +71,19 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("myaccount.html")
+    return render_template("login.html")
 
 
-''' Will take users to their profile page containg their account information '''
-@app.route("/myaccount/<username>", methods=["GET", "POST"])
+'''
+@app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    return render_template("myaccount.html", username=username)
+    trails = list(mongo.db.trails.find())
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    if session["username"]:
+        return render_template("profile.html", trails=trails, username=username)
+    else:
+        return redirect(url_for("login"))
+'''
 
 
 if __name__ == "__main__":
