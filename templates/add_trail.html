@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3>Add a route</h3>
+
+    <form class="add-route">
+        <label for="name">Route Name:</label>
+        <input type="text" id="name" required> <br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" required><br>
+        <label for="terrain">Terrain:</label>
+        <input type="text" id="terrain" required><br>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+    </form>
+
+  
+{% endblock %}
