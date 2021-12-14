@@ -86,8 +86,19 @@ def profile(username):
 '''
 
 
-@app.route("/add_trail")
+@app.route("/add_trail", methods=["GET", "POST"])
 def add_trail():
+    if request.method == "POST":
+        trail = {
+            "trail_name": request.form.get("trail_name"),
+            "description": request.form.get("description"),
+            "terrain": request.form.get("terrain"),
+            "postcode": request.form.get("postcode"),
+            "created_by": session["username"]
+        }
+        mongo.db.trails.insert_one(trail)
+        flash("Route added!")
+        return redirect(url_for("trails"))
     return render_template("add_trail.html")
 
 
