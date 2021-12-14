@@ -13,12 +13,14 @@
 .card {
     margin: none;
     background: #CAD2C5;
-    padding: 0.5rem;
+    padding: 0.5rem, 0.75rem;
 }
 
 .info-btn {
     background-color: #2F3E46;
     color: #CAD2C5;
+    max-width: 10rem;
+    text-align: center;
 }
 
 /* register.html */
@@ -35,4 +37,12 @@
 
 .form-group {
     padding: 0.5rem;
+}
+
+/* register.html */
+.submit-btn {
+    background-color: #354F52;
+    max-width: 10rem;
+    text-align: center;
+    text-decoration: none;
 }
