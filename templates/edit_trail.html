@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3>Edit a route</h3>
+
+    <div class="container">
+        <form class="add-route" method="POST" action="{{ url_for('edit_trail', trails_id=trails._id) }}">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="trail_name">Route Name:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" id="trail_name" required> <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="description">Description:</label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea id="description" name="description" rows="5" cols="33"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="terrain">Terrain:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" id="terrain" required><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="postcode">Postcode:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" id="postcode" required><br>
+                </div>
+            </div>
+            <div class="submit-btn">
+                <button type="submit" class="btn">Edit Route</button>
+            </div>
+        </form>
+    </div>
+
+  
+{% endblock %}

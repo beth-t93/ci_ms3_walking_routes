@@ -102,6 +102,12 @@ def add_trail():
     return render_template("add_trail.html")
 
 
+@app.route("/edit_trail", methods=["GET", "POST"])
+def edit_trail(trails_id):
+    trails = mongo.de.trails.find_one({"_id": ObjectId(trails_id)})
+    return render_template("edit_trail.html", trails=trails)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
