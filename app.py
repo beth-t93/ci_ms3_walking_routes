@@ -102,9 +102,9 @@ def add_trail():
     return render_template("add_trail.html")
 
 
-@app.route("/edit_trail", methods=["GET", "POST"])
-def edit_trail(trails_id):
-    trails = mongo.de.trails.find_one({"_id": ObjectId(trails_id)})
+@app.route("/edit_trails/<trails_id>", methods=["GET", "POST"])
+def edit_trails(trails_id):
+    trails = mongo.db.trails.find_one({"_id": ObjectId(trails_id)})
     return render_template("edit_trail.html", trails=trails)
 
 
