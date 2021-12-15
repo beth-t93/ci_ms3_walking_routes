@@ -78,12 +78,18 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     trails = list(mongo.db.trails.find())
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    username = mongo.db.users.find_one({"username": session["username"]})["username"]
     if session["username"]:
-        return render_template("profile.html", trails=trails, username=username)
+        return render_template("profile.html", username=username, trails=trails)
     else:
         return redirect(url_for("login"))
 '''
+
+
+@app.route("/logout")
+def logout():
+    session.pop("username")
+    return redirect(url_for("login"))
 
 
 @app.route("/add_trail", methods=["GET", "POST"])
@@ -104,8 +110,24 @@ def add_trail():
 
 @app.route("/edit_trails/<trails_id>", methods=["GET", "POST"])
 def edit_trails(trails_id):
+    if request.method == "POST":
+        submit = {
+            "trail_name": request.form.get("trail_name"),
+            "description": request.form.get("description"),
+            "terrain": request.form.get("terrain"),
+            "postcode": request.form.get("postcode"),
+            "created_by": session["username"]
+        }
+        mongo.db.tasks.update({"_id": ObjectId(trails_id)}, submit)
+
     trails = mongo.db.trails.find_one({"_id": ObjectId(trails_id)})
     return render_template("edit_trail.html", trails=trails)
+
+
+@app.route("/delete_trails/<trails_id>")
+def delete_trails(trails_id):
+    mongo.db.trails.remove({"_id": ObjectId(trails_id)})
+    return redirect(url_for("trails"))
 
 
 if __name__ == "__main__":
