@@ -8,7 +8,7 @@
         <div class="card-control col-12 col-md-6 col-lg-4">
             <div class="card shadow-effect">
                 <h5 class="card-title text-center main-font secondary-color">{{ route.trail_name }}</h5>
-                <img src="" class="card-img-top" alt="">
+                <img src="{{ route.image_url }}" class="card-img-top" alt="{{ route.trail_name }}">
                 <div class="card-body">
                     <p class="card-text main-font">{{ route.description }}</p>
                     <p class="card-text main-font"><strong>Terrain:</strong> {{ route.terrain }}</p>
