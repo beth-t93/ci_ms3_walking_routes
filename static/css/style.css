@@ -1,19 +1,27 @@
 /* Global Styling */
 :root {
-    background-color:#CAD2C5
+    background-color:#fff
 }
 
 .navbar {
-    background-color: #2F3E46;
+    background-color: #588b8b;
     text-decoration: none;
     padding-bottom: 1rem;
 }
 
 /* index.html */
 .card {
-    margin: none;
-    background: #CAD2C5;
-    padding: 0.5rem, 0.75rem;
+    color: #c8553d;
+    margin: 1rem;
+    padding: 0.8rem;
+    background-color: #ffd5c2;
+}
+
+.info-btn {
+    text-align: center;
+    padding: 0.5rem;
+    max-width: 7rem;
+    
 }
 
 /* register.html */
@@ -23,7 +31,8 @@
     background: none;}
 
 .register-form button {
-    background-color: #354F52;
+    color: #ffd5c2;
+    background-color: #c8553d;
     max-width: 5rem;
     margin: auto;
 }
@@ -34,7 +43,8 @@
 
 /* register.html */
 .submit-btn {
-    background-color: #354F52;
+    color: #ffd5c2;
+    background-color: #c8553d;
     max-width: 10rem;
     text-align: center;
     text-decoration: none;
