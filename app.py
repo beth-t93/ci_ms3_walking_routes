@@ -40,7 +40,7 @@ def register():
         active_user = user.find_one({'name' : request.form.get('username')})
         password = generate_password_hash(request.form['password'])
         if active_user is None:
-            user.insert({'name' : request.form['username'],
+            user.insert_one({'name' : request.form['username'],
                          'password' : password})
             session['username'] = request.form['username']
             return redirect(url_for('trails'))
@@ -66,20 +66,21 @@ def login():
     return render_template("login.html")
 
 
-'''
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    user = mongo.db.users
+    username = user.find_one({"username": session["username"]})["username"]
     trails = list(mongo.db.trails.find())
-    username = mongo.db.users.find_one({"username": session["username"]})["username"]
     if session["username"]:
-        return render_template("profile.html", username=username, trails=trails)
-    else:
-        return redirect(url_for("login"))
-'''
+        return render_template(
+            "profile.html", username=username, trails=trails)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
+    flash("You have been logged out")
     session.pop("username")
     return redirect(url_for("login"))
 
@@ -90,7 +91,6 @@ def add_trail():
         trail = {
             "trail_name": request.form.get("trail_name"),
             "description": request.form.get("description"),
-            "trail_url": request.form.get("trail_url"),
             "terrain": request.form.get("terrain"),
             "postcode": request.form.get("postcode"),
             "created_by": session["username"]
@@ -106,13 +106,13 @@ def edit_trails(trails_id):
     if request.method == "POST":
         submit = {
             "trail_name": request.form.get("trail_name"),
-            "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "terrain": request.form.get("terrain"),
             "postcode": request.form.get("postcode"),
             "created_by": session["username"]
         }
-        mongo.db.tasks.update({"_id": ObjectId(trails_id)}, submit)
+        mongo.db.tasks.update_one({"_id": ObjectId(trails_id)}, submit)
+        flash("Your route has been updated!")
 
     trails = mongo.db.trails.find_one({"_id": ObjectId(trails_id)})
     return render_template("edit_trail.html", trails=trails)
@@ -121,6 +121,7 @@ def edit_trails(trails_id):
 @app.route("/delete_trails/<trails_id>")
 def delete_trails(trails_id):
     mongo.db.trails.remove({"_id": ObjectId(trails_id)})
+    flash("Your route has been deleted!")
     return redirect(url_for("trails"))
 
 
