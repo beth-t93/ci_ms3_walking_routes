@@ -22,6 +22,7 @@ app.config["IP"] = os.environ.get("IP")
 app.config["PORT"] = os.environ.get("PORT")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
+
 mongo = PyMongo(app)
 
 
@@ -97,6 +98,7 @@ def add_trail():
     if request.method == "POST":
         trail = {
             "trail_name": request.form.get("trail_name"),
+            "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "terrain": request.form.get("terrain"),
             "postcode": request.form.get("postcode"),
@@ -113,6 +115,7 @@ def edit_trails(trails_id):
     if request.method == "POST":
         submit = {
             "trail_name": request.form.get("trail_name"),
+            "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "terrain": request.form.get("terrain"),
             "postcode": request.form.get("postcode"),
