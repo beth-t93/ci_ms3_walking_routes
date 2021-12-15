@@ -1,21 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Log in</h3>
+<h3 class="page-title">Log in</h3>
 
 <div class="container register-form">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4 form-style">
             <form method=POST action="{{ url_for('login') }}">
                 <div class="form-group">
-                    <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                 </div>
-                <div>
+                <div class="btn-container">
                     <button type="submit" class="btn">Login</button>
                 </div>
             </form>

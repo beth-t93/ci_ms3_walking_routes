@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3>Edit a route</h3>
+    <h3 class="page-title">Edit a route</h3>
 
     <div class="container">
         <form class="edit-route" method="POST" action="{{ url_for('edit_trails', trails_id=trails._id) }}">
