@@ -1,6 +1,5 @@
 
 import os
-import bcrypt
 
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
@@ -29,9 +28,7 @@ mongo = PyMongo(app)
 ''' Takes users to the main page index.html '''
 @app.route("/")
 def trails():
-    print(os.environ.get("MONGO_URI"))
     trails = list(mongo.db.trails.find())
-    print(trails)
     return render_template("index.html", trails=trails)
 
 
@@ -39,15 +36,15 @@ def trails():
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
-        users = mongo.db.users
-        existing_user = users.find_one({'name' : request.form['username']})
-
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'name' : request.form['username'], 'password' : hashpass})
+        user = mongo.db.users
+        active_user = user.find_one({'name' : request.form.get('username')})
+        password = generate_password_hash(request.form['password'])
+        if active_user is None:
+            user.insert({'name' : request.form['username'],
+                         'password' : password})
             session['username'] = request.form['username']
             return redirect(url_for('trails'))
-        
+
         return 'That username already exists!'
 
     return render_template('register.html')
@@ -57,21 +54,15 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user:
-            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), existing_user['password'].encode('utf-8')) == existing_user['password'].encode('utf-8'):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-            else:
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
-
-        else:
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-
+        user = mongo.db.users
+        login_user = user.find_one({'name' : request.form.get('username')})
+        print(login_user)
+        if login_user:
+            if check_password_hash(login_user['password'], request.form['password']):
+                session['username'] = request.form['username']
+                return redirect(url_for('trails'))
+            flash('Incorrect Username/Password')
+            return redirect(url_for('login'))
     return render_template("login.html")
 
 
@@ -98,8 +89,8 @@ def add_trail():
     if request.method == "POST":
         trail = {
             "trail_name": request.form.get("trail_name"),
-            "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
+            "trail_url": request.form.get("trail_url"),
             "terrain": request.form.get("terrain"),
             "postcode": request.form.get("postcode"),
             "created_by": session["username"]
