@@ -5,7 +5,7 @@
 
 .navbar {
     font-family: 'Oswald', sans-serif;
-    background-color: #588b8b;
+    background-color: #3C6E71;
     text-decoration: none;
     padding-bottom: 1rem;
 }
@@ -18,10 +18,10 @@
 /* index.html */
 .card {
     font-family: 'Oswald', sans-serif;
-    color: #c8553d;
+    color: #353535;
     margin: 1rem;
     padding: 0.8rem;
-    background-color: #ffd5c2;
+    background-color: #D9D9D9;
 }
 
 .info-btn {
@@ -32,16 +32,17 @@
     
 }
 
-/* register.html */
+/* register and login form styling */
 .register-form {
     font-family: 'Oswald', sans-serif;
     margin: auto;
     padding: 2rem 0rem;
-    background: none;}
+    background: none;
+}
 
 .register-form button {
-    color: #ffd5c2;
-    background-color: #c8553d;
+    color: #fff;
+    background-color: #3C6E71;
     max-width: 5rem;
     margin: auto;
 }
@@ -51,12 +52,25 @@
     padding: 0.5rem;
 }
 
-/* register.html */
 .submit-btn {
     font-family: 'Oswald', sans-serif;
-    color: #ffd5c2;
-    background-color: #c8553d;
+    color: #fff;
+    background-color: #3C6E71;
     max-width: 10rem;
     text-align: center;
     text-decoration: none;
+}
+
+.form-style {
+    margin: auto;
+}
+
+.btn-container {
+    text-align: right;
+}
+
+/* page headings */
+.page-title {
+    text-align: center;
+    padding-top: 3rem;
 }
