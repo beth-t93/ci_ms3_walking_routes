@@ -93,10 +93,12 @@ def logout():
 def add_trail():
     if request.method == "POST":
         trail = {
+            "image_url": request.form.get("image_url"),
             "trail_name": request.form.get("trail_name"),
-            "description": request.form.get("description"),
             "terrain": request.form.get("terrain"),
-            "postcode": request.form.get("postcode"),
+            "start": request.form.get("start"),
+            "end": request.form.get("end"),
+            "description": request.form.get("description"),
             "created_by": session["username"]
         }
         mongo.db.trails.insert_one(trail)
@@ -110,10 +112,12 @@ def add_trail():
 def edit_trails(trails_id):
     if request.method == "POST":
         trail = {
+            "image_url": request.form.get("image_url"),
             "trail_name": request.form.get("trail_name"),
-            "description": request.form.get("description"),
             "terrain": request.form.get("terrain"),
-            "postcode": request.form.get("postcode"),
+            "start": request.form.get("start"),
+            "end": request.form.get("end"),
+            "description": request.form.get("description"),
             "created_by": session["username"]
         }
 
