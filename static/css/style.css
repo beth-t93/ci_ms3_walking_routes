@@ -1,35 +1,78 @@
 /* Global Styling */
 :root {
-    background-color:#fff
+    background-color:#3c6e71
 }
 
+/* navigation */
 .navbar {
     font-family: 'Oswald', sans-serif;
     background-color: #3C6E71;
-    text-decoration: none;
-    padding-bottom: 1rem;
+
 }
 
 .show .navbar-nav {
     text-align: center;
 }
 
+/* The hero image */
+.hero {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0;
+    position: relative;
+  }
+  
+  .hero .hero-image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .hero .hero-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    min-height: 240px;
+    max-height: 800px;
+    background: center center #fff;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .hero .hero-image:after {
+    content:'';
+    display:block;
+    padding-bottom: 56.25%;
+  }
 
 /* index.html */
+.trail-card {
+    margin: 0;
+    width: 100%;
+}
+
 .card {
     font-family: 'Oswald', sans-serif;
     color: #353535;
-    margin: 1rem;
+    margin: 0.25rem;
     padding: 0.8rem;
     background-color: #D9D9D9;
+}
+
+.card-body {
+    padding: 0%;
+}
+
+.card-body p {
+    margin-bottom: 0%;
+    padding: 0.2rem;
 }
 
 .trails-btn {
     font-family: 'Oswald', sans-serif;
     text-align: center;
     padding: 0.5rem;
-    max-width: 5rem;
-    display: inline;
+    margin-top: 0.15rem;
 }
 
 

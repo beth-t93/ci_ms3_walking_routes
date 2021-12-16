@@ -1,27 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
+
+    <div class="hero">
+  <div class="hero-image-container">
+
+    <figure class="hero-image" style="background-image: url('static/img/pexels-avonne-stalling-4538764.jpeg'); max-height: 504px;"></figure>
+  </div>
+</div>
     
     <div class="container trail-card">
-    <div class="row">
-        {% for route in trails %}
-        <div class="card-control col-12 col-md-6 col-lg-4">
-            <div class="card shadow-effect">
-                <h5 class="card-title text-center main-font secondary-color">{{ route.trail_name }}</h5>
-                <img src="{{ route.image_url }}" class="card-img-top" alt="{{ route.trail_name }}">
-                <div class="card-body">
-                    <p class="card-text main-font">{{ route.description }}</p>
-                    <p class="card-text main-font"><strong>Terrain:</strong> {{ route.terrain }}</p>
-                    <p class="card-text main-font"><strong>Postcode:</strong> {{ route.postcode }}</p>
-                    <p class="card-text main-font"><strong>Added by:</strong> {{ route.created_by }}</p>
+        <div class="row">
+            {% for route in trails %}
+            <div class="card-control col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="{{ route.image_url }}" class="card-img-top" alt="{{ route.trail_name }}">
+                    <h5 class="card-title text-center main-font secondary-color">{{ route.trail_name }}</h5>
+                    <div class="card-body">
+                        <p class="card-text main-font">{{ route.description }}</p>
+                        <p class="card-text main-font"><strong>Terrain:</strong> {{ route.terrain }}</p>
+                        <p class="card-text main-font"><strong>Postcode:</strong> {{ route.postcode }}</p>
+                        <p class="card-text main-font"><strong>Added by:</strong> {{ route.created_by }}</p>
+                    </div>
+                    {% if session.username == route.created_by  %}
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" href="{{ url_for('edit_trails', trails_id=trails._id) }}" class="trails-btn btn btn-primary btn-sm">Edit</button>
+                        <button type="button" href="{{ url_for('delete_trails', trails_id=trails._id) }}" class="trails-btn btn btn-secondary btn-sm">Delete</button>
+                    </div>    
+                    {% else %}
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" href="{{ url_for('edit_trails', trails_id=trails._id) }}" class="trails-btn btn btn-primary btn-sm" disabled>Edit</button>
+                        <button type="button" href="{{ url_for('delete_trails', trails_id=trails._id) }}" class="trails-btn btn btn-secondary btn-sm" disabled>Delete</button>
+                    </div>    
+                    {% endif %}
+
+
                 </div>
-                {% if session.username == route.created_by  %}
-                    <a href="{{ url_for('edit_trails', trails_id=trails._id) }}" type="button" class="info-btnbtn btn-sm btn-outline-secondary">Edit</a>
-                    <a href="{{ url_for('delete_trails', trails_id=trails._id) }}" type="button" class="info-btnbtn btn-sm btn-outline-secondary">Delete</a>
-                {% endif %}
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
     
 {% endblock %}
