@@ -86,8 +86,12 @@
 .trails-btn {
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin-top: 0.15rem;
+}
+
+.btns {
+    text-align: right;
 }
 
 
