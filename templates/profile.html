@@ -7,6 +7,7 @@
     </div>
 
     {% for route in trails %}
+        <div class="row">
             <div class="card-control col-12 col-md-6 col-lg-4">
                 <div class="card">
                     <img src="{{ route.image_url }}" class="card-img-top" alt="{{ route.trail_name }}">
@@ -25,9 +26,8 @@
                     </div>     
                     {% endif %}
                 </div>
-                    </div>
-                
-            </div>
+            </div>   
+        </div>
             {% endfor %}
   
 {% endblock %}
