@@ -136,6 +136,18 @@ def delete_trails(trails_id):
     return redirect(url_for("trails"))
 
 
+""" Passes user to custom 404 page """
+@APP.errorhandler(404)
+def page_not_found(e):
+    return render_template('pages/404.html'), 404
+
+
+""" Passes user to custom 500 page """
+@APP.errorhandler(500)
+def internal_error(err):
+    return render_template('pages/500.html'), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
