@@ -95,7 +95,7 @@
 .register-form {
     font-family: 'Oswald', sans-serif;
     margin: auto;
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
     background: none;
 }
 
@@ -132,4 +132,21 @@
 .page-title {
     text-align: center;
     padding-top: 3rem;
+    color: #3c6e71;
+    font-weight: 600;
+}
+
+/* flashes */
+.flashes {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.sub-heading {
+    text-align: center;
+}
+
+.sub-heading a {
+    text-decoration: none;
+    color:#3c6e71;
 }
