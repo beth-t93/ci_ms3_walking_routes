@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3>Add a route</h3>
+    <h3 class="page-title">Add a route</h3>
 
     <div class="container">
         <form class="add-route" method="POST" action="{{ url_for('add_trail') }}">
             <div class="row">
-                
+                <div class="col-sm-4">
+                    <label for="image_url">Image URL:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" id="image_url" class="form-control" name="image_url" required> <br>
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -14,14 +19,6 @@
                 </div>
                 <div class="col-sm-8">
                     <input type="text" id="trail_name" class="form-control" name="trail_name" required> <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label for="description">Description:</label>
-                </div>
-                <div class="col-sm-8">
-                    <textarea id="description" class="form-control" name="description" rows="5" cols="33"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -34,13 +31,30 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="postcode">Postcode:</label>
+                    <label for="start">Starting Point:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="postcode" id="postcode" required><br>
+                    <input type="text" class="form-control" name="start" id="start" required><br>
                 </div>
             </div>
-            <div class="button">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="end">End Point:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="end" id="end" required><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="description">Description:</label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea id="description" class="form-control" name="description" rows="5" cols="33" placeholder="Include any key directions and features for others to follow"></textarea>
+                </div>
+            </div>
+
+            <div class="button btns">
                 <button type="submit" class="btn submit-btn btn-light">Add Route</button>
             </div>
         </form>
