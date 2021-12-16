@@ -70,11 +70,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     user = mongo.db.users
-    username = user.find_one({"username": session["username"]})["username"]
-    trails = list(mongo.db.trails.find())
+    found_user = user.find_one({"name": username})
+    trails = list(mongo.db.trails.find({"created_by": username}))
+    print(trails)
     if session["username"]:
         return render_template(
-            "profile.html", username=username, trails=trails)
+            "profile.html", username=found_user, trails=trails)
 
     return redirect(url_for("login"))
 
@@ -115,11 +116,12 @@ def edit_trails(trails_id):
             "postcode": request.form.get("postcode"),
             "created_by": session["username"]
         }
-        mongo.db.tasks.update_one({"_id": ObjectId(trails_id)}, trail)
+
+        mongo.db.trails.update({"_id": ObjectId(trails_id)}, trail)
         flash("Your route has been updated!")
 
     trails = mongo.db.trails.find_one({"_id": ObjectId(trails_id)})
-    return render_template("edit_trail.html", trails=trails)
+    return render_template("edit_trail.html", trail=trails)
 
 
 ''' Allows users to delete a route they added to the site'''

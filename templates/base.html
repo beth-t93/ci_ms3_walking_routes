@@ -33,7 +33,7 @@
 						<li class="nav-item"> <a class="nav-link"  href="{{ url_for('trails') }}">Home</a></li>
 						{% if session.username %}
 						<li class="nav-item"> <a class="nav-link"  href="{{ url_for('add_trail') }}">Add Route</a></li>
-						<li class="nav-item"> <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+						<li class="nav-item"> <a class="nav-link" href="{{ url_for('profile', username=session.username) }}">Profile</a></li>
 						<li class="nav-item"> <a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
 						{% else %}
 						<li class="nav-item"> <a class="nav-link" href="{{ url_for('login') }}">Login</a></li>

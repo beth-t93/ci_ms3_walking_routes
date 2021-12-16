@@ -4,13 +4,13 @@
     <h3 class="page-title">Edit a route</h3>
 
     <div class="container">
-        <form class="edit-route" method="POST" action="{{ url_for('edit_trails', trails_id=trails._id) }}">
+        <form class="edit-route" method="POST" action="{{ url_for('edit_trails', trails_id=trail._id) }}">
             <div class="row">
                 <div class="col-sm-4">
                     <label for="trail_name">Route Name:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" id="trail_name" value="{{ route.trail_name }}" required> <br>
+                    <input type="text" id="trail_name" name="trail_name" value="{{ trail.trail_name }}" required> <br>
                 </div>
             </div>
             <div class="row">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-sm-8">
                     <textarea id="description" name="description" rows="5" cols="33">
-                        {{- route.description -}}
+                        {{- trail.description -}}
                     </textarea>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <label for="terrain">Terrain:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" id="terrain" value="{{ route.terrain }}" required><br>
+                    <input type="text" id="terrain" name="terrain" value="{{ trail.terrain }}" required><br>
                 </div>
             </div>
             <div class="row">
@@ -36,7 +36,7 @@
                     <label for="postcode">Postcode:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" id="postcode" value="{{ route.postcode }}" required><br>
+                    <input type="text" id="postcode" name="postcode" value="{{ trail.postcode }}" required><br>
                 </div>
             </div>
             <div class="submit-btn">
