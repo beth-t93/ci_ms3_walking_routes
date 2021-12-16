@@ -92,6 +92,8 @@
 
 .btns {
     text-align: right;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 
@@ -132,12 +134,21 @@
     text-align: right;
 }
 
+.form-container {
+    margin-bottom: 1rem;
+}
+
 /* page headings */
 .page-title {
     text-align: center;
     padding-top: 3rem;
     color: #3c6e71;
     font-weight: 600;
+}
+
+.page-heading p {
+    text-align: center;
+
 }
 
 /* flashes */
