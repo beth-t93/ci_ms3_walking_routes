@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
+    <!-- used code from Stackoverflow to fix issue with image height being 0 -->
     <div class="hero">
-  <div class="hero-image-container">
-
-    <figure class="hero-image" style="background-image: url('static/img/pexels-avonne-stalling-4538764.jpeg'); max-height: 504px;"></figure>
-  </div>
-</div>
+    <div class="hero-image-container">
+        <figure class="hero-image" style="background-image: url('static/img/pexels-avonne-stalling-4538764.jpeg'); max-height: 504px;"></figure>
+        <div class="hero-text">
+        <h1>Walking Ways</h1>
+        <h5>A collection of walking routes in North Wales</h5>
+        </div>
+    </div>
+    </div>
     
     <div class="container trail-card">
         <div class="row">
