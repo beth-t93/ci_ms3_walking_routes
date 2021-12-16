@@ -66,6 +66,7 @@ def login():
     return render_template("login.html")
 
 
+''' Allows an exisiting user to access their profile page'''
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     user = mongo.db.users
@@ -78,6 +79,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+''' Will log a user out'''
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
@@ -85,6 +87,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+''' Allows an exisiting user to add a route to the site'''
 @app.route("/add_trail", methods=["GET", "POST"])
 def add_trail():
     if request.method == "POST":
@@ -101,23 +104,25 @@ def add_trail():
     return render_template("add_trail.html")
 
 
+''' Allows an exisiting user to edit a route they have previously added to the site'''
 @app.route("/edit_trails/<trails_id>", methods=["GET", "POST"])
 def edit_trails(trails_id):
     if request.method == "POST":
-        submit = {
+        trail = {
             "trail_name": request.form.get("trail_name"),
             "description": request.form.get("description"),
             "terrain": request.form.get("terrain"),
             "postcode": request.form.get("postcode"),
             "created_by": session["username"]
         }
-        mongo.db.tasks.update_one({"_id": ObjectId(trails_id)}, submit)
+        mongo.db.tasks.update_one({"_id": ObjectId(trails_id)}, trail)
         flash("Your route has been updated!")
 
     trails = mongo.db.trails.find_one({"_id": ObjectId(trails_id)})
     return render_template("edit_trail.html", trails=trails)
 
 
+''' Allows users to delete a route they added to the site'''
 @app.route("/delete_trails/<trails_id>")
 def delete_trails(trails_id):
     mongo.db.trails.remove({"_id": ObjectId(trails_id)})
