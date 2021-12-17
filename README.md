@@ -339,72 +339,70 @@ All devices passed the tests
     | ------- | ------ | --------------- | ------------- |
     | Bright colour scheme that is also still legible | All colours used on the site are bright and colourful, but still allow good legibility | Users find the site eye-catching and have no issues with the sites ease of use | Works as expected |
 
-3. As a visitor I would like to be able to start a quiz quickly
+3. As a visitor I would like to be able to add information about new routes easily
 
     | Feature | Action | Expected Result | Actual Result |
     | ------- | ------ | --------------- | ------------- |
-    | Easy to see play button on the first page as the site loads | User presses the play button | To be taken to the start of a quiz | Works as expected |
+    | After login the navigation bar contains an add button | User presses the add button | To be taken to the add routes form | Works as expected |
 
-4. As a visitor I would like to have feedback on my answers
-
-    | Feature | Action | Expected Result | Actual Result |
-    | ------- | ------ | --------------- | ------------- |
-    | Sweet Alerts | An alert pops up telling the user if the answer is correct or incorrect, and also tells the user what the correct answer was | User is able to clearly see the result of their answer selection | Works as expected |
-
-5. As a visitor I want to be able to return to the site and not get the same questions every time.
+4. As a visitor I would like to find out about new routes in my area
 
     | Feature | Action | Expected Result | Actual Result |
     | ------- | ------ | --------------- | ------------- |
-    | Use of an API to pull questions to the site | The site automatically pulls questions from an API with many questions that is constantly being added to | The user gets a wide variety of questions, no matter how many times they complete the quiz | Works as expected |
+    |  Start/End Point on information cards | The user can easily see an address of where the route starts and ends | User is able to see which routes are local to them | Works as expected |
 
-6. As a visitor I would like to be able to see my final score
-
-    | Feature | Action | Expected Result | Actual Result |
-    | ------- | ------ | --------------- | ------------- |
-    | Separate score area at the end of the quiz | When the users completes the quiz a new div appears, showing the score | The user is easily able to see their final score at the end of the questions | Works as expected |
-
-7. As a visitor I would like to keep up to date with any new quiz content via social media.
+5. As a visitor I would like to be able to update routes I have already added to the site
 
     | Feature | Action | Expected Result | Actual Result |
     | ------- | ------ | --------------- | ------------- |
-    | Social media links on homepage | The user clicks on the relevant logo at the bottom of the page | The page will open in a new tab | Works as expected|
+    | On the profile page each route has an edit button | click edit to be taken to the edit route form | To be taken to the edit form which is prepoulated with the routes information | Works as expected |
+
+6. As a visitor I would like to be able to delete routes I have previously added to the site
+
+    | Feature | Action | Expected Result | Actual Result |
+    | ------- | ------ | --------------- | ------------- |
+    | On the profile page each card has a delete button | Click the delete button | The route is deleted from the site and database | Works as expected |
+
+7. As a visitor I would like to be able to see an image from the route
+
+    | Feature | Action | Expected Result | Actual Result |
+    | ------- | ------ | --------------- | ------------- |
+    | Ablility to add image via URL to each route | The user is able to see the image on each card | The user can easily see an image with each route |  Works as expected|
 
 8. As a site owner I want the site to be easy to use.
 
     | Feature | Action | Expected Result | Actual Result |
     | ------- | ------ | --------------- | ------------- |
-    | Simple page design | Easily see which button you need to press to progress through the site | The user can easily navigate the site to start a new quiz | Works as expected |
+    | Simple page design | Easily see which button you need to press to progress through the site | The user can easily navigate the site | Works as expected |
 
 
-9. Keep the maintenance of the site as minimal as possible by using an API to source the quiz questions.
-10. Ensure there is a variety of questions so users will not get the same set of questions if they play more than once.
-
+9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
 
     | Feature | Action | Expected Result | Actual Result |
     | ------- | ------ | --------------- | ------------- |
-    | Use of an API that has a feature to add questions to it | The API will automatically pull through questions that have been added to the site | The questions on each quiz will change every time a user plays | Works as expected |
+    | The homepage and the user profile display the routes | Users can easily see the routes on the site | Users can easily see routes on the site | Works as expected |
+    | ------- | ------ | --------------- | ------------- |
+    | The eidt and delete buttons on each route on the profile page | Users can easily navigate to edit or delte their routes | Users are able to successfully edit or delete routes | Works as expected |
+
+10. As a site owner I want the purpose of the site to be clear to each user.
+
+    | Feature | Action | Expected Result | Actual Result |
+    | ------- | ------ | --------------- | ------------- |
+    | Hero Text, page headings and flashes | Each page is clearly labelled with headings or messages telling the user where they are or what action they have just completed | Users can easily see where they are up to on the site | Works as expected |
 
 ## Bugs
-- Bug : Quiz questions contained other characters instead of the correct punctuation.
-- Fix: Update JavaScript to innerHTML rather than innerText for the question functions.
+- Bug : Data storing as null in the database when added through the site
+- Fix: update inputs with names
 
-- Bug: Loading wheel and quiz showing at the same time, quiz and final score showing at the same time and loading wheel preventing all other page content from showing.
-- Fix: Check and ensure 'hide' class was active and inactive on the correct elements at the correct time.
+- Bug: Edit and delete buttons being displayed outside the card
+- Fix: Edit the structure of the divs on the page
 
-- Bug: CSS stylesheets not pulling thorugh to GitHub Pages.
-- Fix : Remove error with an extra '/' in the link to the stylesheet.
+- Bug: SSL error causing communication errors with the database
+- Fix: Reinstall and update python
 
-- Bug: The timeout of the Sweet Alert and the New Question function preventing the user to easily see what the correct answer was should they get the wrong answer.
-- Fix: Add in the correct answer number to the Sweet Alert and increase the amount of time before the next question loads.
+- Bug: URl errors with specific id's
+- Fix: Restrucuture python routes ensuring all names are different
 
-- Bug: The answer divs becoming too narrow to show answer on smaller screens
-- Fix: Add a media query to remove padding from around the edge of the divs to allow them to fill the width of the screen.
-
-- Bug: API data not loading to site.
-- Fix: Add fetch statement inside a function.
-
-- Bug: Sidescroll on small screen sizes
-- Fix: Remove 100% for width in CSS on the dic for the question counter.
 
 ## Deployment
 ### Github Pages
@@ -429,15 +427,65 @@ This site is deployed using GitHub pages, this was the process:
 5. In the terminal type 'git clone' and the url
 6. Press enter for the clone to be created.
 
+### Create the Flask Application
+1. Install Flask - type in terminal:
+``` pip3 install Flask ```
+2. Now we need to create a few new files. First, our Python file that will be the foundation of our application. You can name it something else, in this case, I used app.py, so type in the terminal:
+```touch app.py```
+3. Next, we will be storing some sensitive data, and we need to hide them using environment variables. You can use the terminal or just create a new file. I used the terminal, so type in the terminal:
+```touch .env```
+4. That file should never be pushed to GitHub, so we need to be able to ignore it somehow, so type in the terminal:
+```touch .gitignore```
+5. Double check in the gitignore file that you see ".env" and "pycache/"
+6. Go to the env.py file and add the following:
+```import os```
+```os.environ["PORT"] = "5000"```
+```os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"```
+```os.environ["DEBUG"] = "True"```
+```os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"```
+```os.environ["MONGO_DBNAME"]= "DATABASE_NAME" ```
+7. Go to app.py file and import the following:
+```import os```
+```from flask import (Flask, render_template, redirect, request,```
+```url_for, session, flash)```
+```from flask_pymongo import PyMongo```
+```from bson.objectid import ObjectId```
+```from werkzeug.security import generate_password_hash, check_password_hash```
+```from os import environ, path```
+```from dotenv import load_dotenv```
+```from pathlib import Path```
+8. Create an instance of Flask
+```app = Flask(__name__)```
+9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden .env file. Make sure to update this to debug=False before the actual deployment of your project.
+```if __name__ == "__main__":````
+```app.run(host=os.environ.get("IP"),```
+```port=int(os.environ.get("PORT")),```
+```debug=True)```
+10. You can now run your application, type in the terminal:
+```python3 app.py```
+
+### Deploying to Heroku
+1. In the workspace terminal, run pip3 freeze --local > requirements.txt to collect any dependencies.
+2. Run python app.py > Procfile to create a Procfile required for Heroku deployment.
+3. Go to the Heroku website. Register for an account and click on "Create a new app".
+4. Setup a Heroku app within the Heroku dashboard - Type in the app name and select region the click on create app.
+5. In Heroku, in your app, click on "GitHub" to connect to your repository. Type in the repository name as on GitHub. Click on "Connect".
+6. Search for your repo (or sign in and connect GitHub account) and select this.
+7. In the 'settings tab, click 'Reveal Config Vars' and input your environment variable from your local build in the key/value inputs.
+8. Then click "Hide Config Vars" in Heroku.
+9. In Heroku, select 'Automatic Deploys' to automatically rebuild the app when a new Git commit is pushed.
+10. Once the initial build is complete, click 'Open App' in the top right of the screen to view the application.
+
 ## Credits
 ### Content and Media
-- The API data was sourced from [Open Trivia Database](https://opentdb.com/api_config.php).
-- All other text was written by myself.
-- The concept for the logo was my own.
+- The Hero image came from Avonne Stalling on [Pexels](https://www.pexels.com/photo/brown-and-gray-mountains-near-body-of-water-under-white-cloudy-sky-4538764/) 
+- All other images on the site are taken by me
+- The text on the site was written by me, using local knowledge for the routes
 
 ### Code
-- [W3 Schools](https://www.w3schools.com/howto/howto_css_loader.asp) to create a loading wheel.
-- [Sweet Alert](https://sweetalert2.github.io/) was used to create modals for user feedback on each answer.
-- [Open Trivia Database](https://opentdb.com/api_config.php) was used as an API for the quiz questions.
+- [Stack Overflow](https://stackoverflow.com/questions/53500221/css-hero-image-height-issue) to fix bug with hero image not displaying properly
+- [Bootstrap](https://getbootstrap.com/) adapted code for forms, navigation, buttons, cards
 
 ## Acknowledgements
+- To my mentor, Richard Wells for supporting me in completing this project.
+- To my partner for assistance in testing.
