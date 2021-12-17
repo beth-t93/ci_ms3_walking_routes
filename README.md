@@ -86,17 +86,19 @@ The aim of this project is to create a site which enables people to share their 
 
 ## Scope
 Based on the above information, features to be included in the design include:
-- An easy to navigate homepage with an obvious path to the game itself
-- A seperate game page that will be easy to use and will be accessible for users
-- Favicon to help users identify the site in any tabs.
+- An easy to navigate homepage with an obvious path to other pages
+- A profile page that is only accessbile to individual users when they log in
+- An add route form which will only be visibale to users when they log in
+- Easily log in and logout of the site with the relevant buttons in the navigation bar
+- Favicon to help users identify the site in any tabs
 
 ## Structure
-A responsive trivia quiz site consisiting of 2 pages
+A responsive site consisitng of 6 pages and two custom error pages. 3 of the pages are only visible when a user creates a profile.
 
-The site will be easy to use across all devices, enabling the user to start a quiz quickly from pretty much anywhere.
+The site will be easy to use across all devices.
 
 ## Design Choices
-The style of the site will be simple and minimal so it remains easy to navigate, but also so it keeps the users attention to finish the quiz, and even complete multiple rounds of questions.
+The style of the site will be simple and minimal so it remains easy to navigate and allows people to add and edit routes easily.
 
 ### Colours
 The colour scheme for this site is meant to be bright and eye catching to the user, however there should still be enough contrast between the colours used so that the site remains easy to read and navigate for longer periods of time.
