@@ -276,7 +276,7 @@ The area covered would also expand, as the routes on the site are currently all 
 
 ## Information Architecture
 ### Data Storage
-#### User Information
+- User Information
 
     | Title | Key in database | Form Validation | Data Type |
     | ------| --------------- | --------------- | --------- |
@@ -284,7 +284,7 @@ The area covered would also expand, as the routes on the site are currently all 
     | Username | name | Text | string |
     | Password | password | Text | string |
 
-### Route information 
+- Route information 
 
     | Title | Key in database | Form Validation | Data Type |
     | ----- | --------------- | --------------- | --------- |
