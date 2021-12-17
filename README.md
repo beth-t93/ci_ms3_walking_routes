@@ -130,20 +130,18 @@ To ensure the website is easily readable while also keeping to the simple and mi
 ### Languages
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Frameworks, Libraries and Other Tools
-1. [Affinity Designer](https://affinity.serif.com/en-gb/designer/) was used to create the inital logo idea and colour swatch - I ended up using plain text in the logo so chose to code this in html rather than using an image file.
-2. [Sweet Alert](https://sweetalert2.github.io/) was used to create modals for user feedback on each answer.
-3. [Git](https://git-scm.com/) was used within VS Code for version control to push code to GitHub.
-4. [Github](https://github.com/) was used as a remote repository to store code.
-5. [Am I Responsive](http://ami.responsivedesign.is/) was used to create the mockup you see at the start of this README.md file
-6. [Coolors](https://coolors.co/) was used to help put together the colour scheme used throughout the site.
-7. [Visual Studio Code](https://visualstudio.microsoft.com/) is the IDE I used to develop the project.
-8. [Balsamiq](https://balsamiq.com/) was used to create the wireframes for the site
-9. [Font Awesome](https://fontawesome.com/) was used for the icons throughout the site.
-10. [Google Fonts](https://fonts.google.com/) Bebas Neue was used for headings, while Montserrat was used for body text.
-11. [Open Trivia Database](https://opentdb.com/api_config.php) was used as an API for the quiz questions.
+1. [Affinity Designer](https://affinity.serif.com/en-gb/designer/) was used to create the colour swatch.
+2. [Git](https://git-scm.com/) was used within VS Code for version control to push code to GitHub.
+3. [Github](https://github.com/) was used as a remote repository to store code.
+4. [Am I Responsive](http://ami.responsivedesign.is/) was used to create the mockup you see at the start of this README.md file
+5. [Coolors](https://coolors.co/) was used to help put together the colour scheme used throughout the site.
+6. [Visual Studio Code](https://visualstudio.microsoft.com/) is the IDE I used to develop the project.
+7. [Balsamiq](https://balsamiq.com/) was used to create the wireframes for the site
+8. [Font Awesome](https://fontawesome.com/) was used for the icons throughout the site.
+9. [Google Fonts](https://fonts.google.com/) Bebas Neue was used for headings, while Montserrat was used for body text.
 
 
 ## Features
