@@ -449,13 +449,29 @@ This site is deployed using GitHub pages, this was the process:
 
 ### Create the Flask Application
 1. Install Flask - type in terminal:
-``` pip3 install Flask ```
+
+``` 
+pip3 install Flask 
+```
+
 2. Now we need to create a few new files. First, our Python file that will be the foundation of our application. You can name it something else, in this case, I used app.py, so type in the terminal:
-```touch app.py```
+
+```
+touch app.py
+```
+
 3. Next, we will be storing some sensitive data, and we need to hide them using environment variables. You can use the terminal or just create a new file. I used the terminal, so type in the terminal:
-```touch .env```
+
+```
+touch .env
+```
+
 4. That file should never be pushed to GitHub, so we need to be able to ignore it somehow, so type in the terminal:
-```touch .gitignore```
+
+```
+touch .gitignore
+```
+
 5. Double check in the gitignore file that you see ".env" and "pycache/"
 6. Go to the env.py file and add the following:
 
@@ -469,17 +485,26 @@ This site is deployed using GitHub pages, this was the process:
     ```
 
 7. Go to app.py file and import the following:
-```import os```
-```from flask import (Flask, render_template, redirect, request,```
-```url_for, session, flash)```
-```from flask_pymongo import PyMongo```
-```from bson.objectid import ObjectId```
-```from werkzeug.security import generate_password_hash, check_password_hash```
-```from os import environ, path```
-```from dotenv import load_dotenv```
-```from pathlib import Path```
+```
+import os
+
+```
+from flask import (Flask, render_template, redirect, request,
+url_for, session, flash)
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
+from os import environ, path
+from dotenv import load_dotenv
+from pathlib import Path
+```
+
 8. Create an instance of Flask
-```app = Flask(__name__)```
+
+```
+app = Flask(__name__)
+```
+
 9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden .env file. Make sure to update this to debug=False before the actual deployment of your project.
 
 ```if __name__ == "__main__":````
