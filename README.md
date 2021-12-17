@@ -1,6 +1,6 @@
-![images](mockup!)
+![images](docs/images/amiresponsive.png)
 
-[View the deployed site here]()
+[View the deployed site here](https://walking-routes.herokuapp.com/)
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@
 
 
 ## Project Goals
-The aim of this project is to create a site which enables people to share their favourite walking routes around North Wales.
+The aim of this project is to create a site which enables people to share their favourite walking routes around North Wales. Users will be able to add, edit and delete the routes. 
 
 ## User Experience
 ### User Goals
@@ -50,6 +50,7 @@ The aim of this project is to create a site which enables people to share their 
 - Walkers
 - General public interested in getting out walking more
 - Dog walkers
+- People that are new to the area and would like to find out about walks locally
 
 ### User Stories
 #### Visitor Goals
@@ -70,13 +71,17 @@ The aim of this project is to create a site which enables people to share their 
 #### Requirements
 - Easy to navigate
 - Appealing design
-- Relevant information to guide the user through the game
-- Clean design that further helps the user navigate through a game with no distractions.
+- The user will be able to log in to add a route
+- Only the user that added the route origianlly will be able to edit or delete it
+- All users will be able to view the routes on the site.
 
 #### Expectations
 - Buttons take you to the page they say they will
-- Social media links will open in a separate tab
-- To receive feedback on answers, whether they are correct or not
+- The add route form will successfully add a route to the database
+- The edit form will successfully edit a route from the database
+- The delete button will successfully delete a route from the database
+- The user will receive feedback from the site when ading or editing a route and logging off
+- Users are able to create an account so they can start adding routes
 
 
 ## Scope
