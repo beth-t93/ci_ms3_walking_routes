@@ -114,14 +114,16 @@ To ensure the website is easily readable while also keeping to the simple and mi
 ## Surface
 
 ### Wireframes
-- [Home - desktop](docs/wireframe/index-desktop-wireframe.pdf)
-- [Home - tablet](docs/wireframe/index-tablet-wireframe.pdf)
-- [Home - mobile](docs/wireframe/index-mobile-wireframe.pdf)
-
-- [Game - desktop](docs/wireframe/game-desktop-wireframe.pdf)
-- [Game - tablet](docs/wireframe/game-tablet-wireframe.pdf)
-- [Game -mobile](docs/wireframe/game-mobile-wireframe.pdf)
-
+- [Index - desktop](docs/wireframes/index-web.pdf)
+- [Index - mobile and tablet](docs/wireframes/index-mobile.pdf)
+- [Login - desktop](docs/wireframes/login-web.pdf)
+- [Login - mobile and tablet](docs/wireframes/login-mobile.pdf)
+- [Register - desktop](docs/wireframes/register-web.pdf)
+- [Register - mobile and tablet](docs/wireframes/register-mobile.pdf)
+- [Profile - desktop](docs/wireframes/profile-web.pdf)
+- [Profile - mobile and tablet](docs/wireframes/profile-mobile.pdf)
+- [Add and Edit Route - desktop](docs/wireframes/add-edit-web.pdf)
+- [Add and Edit Route - mobile and tablet](docs/wireframes/add-edit-mobile.pdf)
 
 ## Technologies Used
 
