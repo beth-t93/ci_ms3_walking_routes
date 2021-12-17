@@ -103,7 +103,7 @@ The style of the site will be simple and minimal so it remains easy to navigate 
 ### Colours
 The colour scheme for this site is meant to be bright and eye catching to the user, however there should still be enough contrast between the colours used so that the site remains easy to read and navigate for longer periods of time.
 
-![images](docs/features/ms2-colour-scheme.jpg)
+![images](docs/images/ms3 colours.jpg)
 
 I have chosen a colour scheme that is bright and eye-catching to the user.
  - Colour 1: (Hex: #0B3954) This is a dark blue that is used for the background thoughout the whole site, it gives the other content a darker background so it is able to stand out from the page. This colour is also used for the text colour on the buttons of the site.
