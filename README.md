@@ -266,16 +266,13 @@ The homepage is made up of:
 9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
 
 
-
-
-
-
-
-
 ## Future Features
-Something I would look to add in the future is the ability to choose a specific topic and question difficulty to make completing multiple rounds of the quiz more appealing. 
+In the future I would add the ability to map out each route so users can easily follow a specific route, that is then supported by the instructions given in the route description.
 
-I would also look at adding leaderboards per topic.
+I would also add a feature where users could comment on eachothers routes, creating a community feel on the site.
+
+The area covered would also expand, as the routes on the site are currently all in North Wales.
+
 
 ## Validation and Testing
 
