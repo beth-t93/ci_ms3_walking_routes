@@ -103,7 +103,7 @@ The style of the site will be simple and minimal so it remains easy to navigate 
 ### Colours
 The colour scheme for this site is meant to be bright and eye catching to the user, however there should still be enough contrast between the colours used so that the site remains easy to read and navigate for longer periods of time.
 
-![images](docs/images/ms3 colours.jpg)
+![images](docs/images/ms3colours.jpg)
 
 I have chosen a colour scheme that is bright and eye-catching to the user, but it still allows the images added to routes by the user to stand out from the page.
 ### Fonts/Typography
