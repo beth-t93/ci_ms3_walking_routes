@@ -401,8 +401,8 @@ All devices passed the tests
     | Feature | Action | Expected Result | Actual Result |
     | ------- | ------ | --------------- | ------------- |
     | The homepage and the user profile display the routes | Users can easily see the routes on the site | Users can easily see routes on the site | Works as expected |
-    | ------- | ------ | --------------- | ------------- |
-    | The eidt and delete buttons on each route on the profile page | Users can easily navigate to edit or delte their routes | Users are able to successfully edit or delete routes | Works as expected |
+    | The edt and delete buttons on each route on the profile page | Users can easily navigate to edit or delte their routes | Users are able to successfully edit or delete routes | Works as expected |
+
 
 10. As a site owner I want the purpose of the site to be clear to each user.
 
@@ -458,12 +458,16 @@ This site is deployed using GitHub pages, this was the process:
 ```touch .gitignore```
 5. Double check in the gitignore file that you see ".env" and "pycache/"
 6. Go to the env.py file and add the following:
-```import os```
-```os.environ["PORT"] = "5000"```
-```os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"```
-```os.environ["DEBUG"] = "True"```
-```os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"```
-```os.environ["MONGO_DBNAME"]= "DATABASE_NAME" ```
+
+    ```
+    import os
+    os.environ["PORT"] = "5000"
+    os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+    os.environ["DEBUG"] = "True"
+    os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+    os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
+    ```
+
 7. Go to app.py file and import the following:
 ```import os```
 ```from flask import (Flask, render_template, redirect, request,```
@@ -477,6 +481,7 @@ This site is deployed using GitHub pages, this was the process:
 8. Create an instance of Flask
 ```app = Flask(__name__)```
 9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden .env file. Make sure to update this to debug=False before the actual deployment of your project.
+
 ```if __name__ == "__main__":````
 ```app.run(host=os.environ.get("IP"),```
 ```port=int(os.environ.get("PORT")),```
