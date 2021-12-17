@@ -105,12 +105,9 @@ The colour scheme for this site is meant to be bright and eye catching to the us
 
 ![images](docs/images/ms3 colours.jpg)
 
-I have chosen a colour scheme that is bright and eye-catching to the user.
- - Colour 1: (Hex: #0B3954) This is a dark blue that is used for the background thoughout the whole site, it gives the other content a darker background so it is able to stand out from the page. This colour is also used for the text colour on the buttons of the site.
- - Colour 2: (Hex: #BFD7EA) I chose this colour to contrast well with the background colour, it will be used throughout the site for key information, such as the quiz questions and social media icons.
- - Colour 3: (Hex: #FF5A5F) This colour is used as a fun pop of colour against the dark background. It will be used for the logo and test content on the home page, as well as give emphasis to other items on the site, such as the answer selection boxes.
+I have chosen a colour scheme that is bright and eye-catching to the user, but it still allows the images added to routes by the user to stand out from the page.
 ### Fonts/Typography
-To ensure the website is easily readable while also keeping to the simple and minimal design, the fonts used are: Bebas Neue for headings and the logo and Montserrat for all other text (these are taken from Google Fonts library) with sans-serif being the fallback font should either of the selected fonts be unavailable. 
+To ensure the website is easily readable while also keeping to the simple and minimal design, the font I have used is Oswald, taken from the Google Fonts library, with sans-serif being the fallback font should either of the selected fonts be unavailable. 
 
 ## Skeleton
 
