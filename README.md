@@ -60,12 +60,12 @@ The aim of this project is to create a site which enables people to share their 
 4. As a visitor I would like to find out about new routes in my area
 5. As a visitor I would like to be able to update routes I have already added to the site
 6. As a visitor I would like to be able to delete routes I have previously added to the site
-7. As a visitor I would like to be able to see a map of the route
+7. As a visitor I would like to be able to see an image from the route
 
 #### Site Owner Goals
 8. As a site owner I want the site to be easy to use.
 9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
-10. As a site owner I want 
+10. As a site owner I want the purpose of the site to be clear to each user.
 
 ### User Requirements and Expectations
 #### Requirements
@@ -146,36 +146,39 @@ To ensure the website is easily readable while also keeping to the simple and mi
 
 ## Features
 #### Feature 1 - Homepage
-The homepage is made up of three feautres:
-1. The title section
-2. The play button
-3. Social media links
-##### 1. Title
-![images](docs/features/feature-title.png)
-- This is the first thing you see when you get to the site so I decided this needed to be easy to read, but still follow the bright colour scheme of the site.
+The homepage is made up of:
+1. The navigation bar
+2. The hero image and text
+3. The cards containing information about the routes
+##### 1. Navigation
+![images](docs/features/feature-nav.png)
+- This is the first thing you see when you get to the site so I decided this needed to be easy to read to allow the user to successfully navigate through the site.
 - As I wanted to keep the logo simple I used text only, in a bold, striking font.
-- The paragraph on this page gives the user an idea of the kind of quiz they are about to start.
+- The navigation links are relevant and change depending on if the user is logged in or not.
 ###### User stories covered by this feautre:
 1. As a visitor I want the site to be easy and simple to use.
 2. As a visitor I want the site to be colourful and eye-catching, as well as be easy to read.
+3. As a visitor I would like to be able to add information about new routes easily
 8. As a site owner I want the site to be easy to use.
 
-##### 2. Play button
-![images](docs/features/feature-index-play-button.png)
-- This is centrally located on the page making it easy for a user to start a game
-- The colour matches the text and title above to make the site eye-catching for the user.
+##### 2. Hero Text and Image
+![images](docs/features/feature-heroimage.png)
+- This feature clearly tells the user what the site is about.
+- The text is legible and easy to read due to the shadow added to the image.
 ###### User stories covered by this feautre:
 1. As a visitor I want the site to be easy and simple to use.
 2. As a visitor I want the site to be colourful and eye-catching, as well as be easy to read.
-3. As a visitor I would like to be able to start a quiz quickly
-8. As a site owner I want the site to be easy to use.
+10. As a site owner I want the purpose of the site to be clear to each user.
 
-##### 3. Social media links
-![images](docs/features/feature-social-media.png)
-- I added these links so that users would be able to keep up to date with any future developments with the quiz, such as new categories or the addition of a leaderboard.
-- The colour I chose for these is a lighter blue which offers more of a contrast with the rest of the page.
+##### 3. Cards containing information about the route
+![images](docs/features/feature-cards.png)
+- This is where all the information added by users will be displayed.
+- The design means key information, such as the start and end point are clear and easy to find.
 ###### User stories covered by this feautre:
-7. As a visitor I would like to keep up to date with any new quiz content via social media.
+2. As a visitor I want the site to be colourful and eye-catching, as well as be easy to read.
+4. As a visitor I would like to find out about new routes in my area
+7. As a visitor I would like to be able to see an image from the route
+9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
 
 
 #### Feature 2 - Quiz and Score Page
