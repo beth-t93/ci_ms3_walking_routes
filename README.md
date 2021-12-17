@@ -487,10 +487,9 @@ os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
 ```
 
 7. Go to app.py file and import the following:
-```
-import os
 
 ```
+import os
 from flask import (Flask, render_template, redirect, request,
 url_for, session, flash)
 from flask_pymongo import PyMongo
