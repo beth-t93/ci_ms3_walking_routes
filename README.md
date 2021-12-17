@@ -279,29 +279,25 @@ The area covered would also expand, as the routes on the site are currently all 
 ### HTML Validation
 I used the [W3C Markup Validation Service](https://validator.w3.org/) to validate the HTML of the website. All pages passed with 0 errors and 0 warnings.
 
-- [Home](docs/validation/html/html-validation-index.png)
-- [Game](docs/validation/html/html-validation-quiz.png)
+- [Index](docs/validation/html/index.png)
+- [Login](docs/validation/html/login.png)
+- [Add a route](docs/validation/html/login.png)
 ### CSS Validation
 I used the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to validate the CSS of the website.
 
-- [CSS](docs/validation/css/css-validation.png)
+- [CSS](docs/validation/css/css.png)
 
-### JavaScript Validation
-I used [JSHint](https://jshint.com/) to vaildate the JavaScript of the site
+### Python Validation
+I used [PEP8 online](http://pep8online.com/) and [Extends Class](https://extendsclass.com/python-tester.html) to vaildate the Python of the site
 
-- [JavaScript](docs/validation/jshint/jshint.png)
-
-### Accessibility
-I used the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) to check that my website was accessible.
-
-- [Home](docs/validation/accessibility/wave-index.png)
-- [Game](docs/validation/accessibility/wave-game.png)
+- [PEP8](docs/validation/python/PEP8.png)
+- [Extends Class](docs/validation/python/Python-Syntax.png) - Shows 0 syntax errors
 
 ### Performance
 I used [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) to measure the performance and speed of my website.
 
-- [Home](docs/validation/lighthouse/lighthouse-index.png)
-- [Game](docs/validation/lighthouse/lighthouse-quiz.png)
+- [Index](docs/validation/lighthouse/lighthouse-index.png)
+- [Profile](docs/validation/lighthouse/lighthouse-profile.png)
 
 ### Testing on other devices
 
