@@ -140,13 +140,13 @@ def delete_trails(trails_id):
 @app.errorhandler(404)
 def page_not_found(e):
     """ Passes user to custom 404 page """
-    return render_template('pages/404.html'), 404
+    return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def internal_error(e):
     """ Passes user to custom 500 page """
-    return render_template('pages/500.html'), 500
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
