@@ -300,7 +300,7 @@ The area covered would also expand, as the routes on the site are currently all 
 ## Validation and Testing
 
 ### HTML Validation
-I used the [W3C Markup Validation Service](https://validator.w3.org/) to validate the HTML of the website. All pages passed with 0 errors and 0 warnings.
+I used the [W3C Markup Validation Service](https://validator.w3.org/) to validate the HTML of the website.
 
 - [Index](docs/validation/html/index.png)
 - [Login](docs/validation/html/login.png)
@@ -509,12 +509,18 @@ app = Flask(__name__)
 
 9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden .env file. Make sure to update this to debug=False before the actual deployment of your project.
 
-```if __name__ == "__main__":````
-```app.run(host=os.environ.get("IP"),```
-```port=int(os.environ.get("PORT")),```
-```debug=True)```
+```
+if __name__ == "__main__":
+app.run(host=os.environ.get("IP"),
+port=int(os.environ.get("PORT")),
+debug=True)
+```
+
 10. You can now run your application, type in the terminal:
-```python3 app.py```
+
+```
+python3 app.py
+```
 
 ### Deploying to Heroku
 1. In the workspace terminal, run pip3 freeze --local > requirements.txt to collect any dependencies.
