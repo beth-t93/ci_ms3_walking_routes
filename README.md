@@ -274,6 +274,26 @@ I would also add a feature where users could comment on eachothers routes, creat
 
 The area covered would also expand, as the routes on the site are currently all in North Wales.
 
+## Information Architecture
+### Data Storage
+#### User Information
+    | Title | Key in database | Form Validation | Data Type |
+    | ------- | ------ | --------------- | -------- |
+    | Account Id | _id | No validation | ObjectId |
+    | Username | name | Text | string |
+    | Password | password | Text | string |
+
+### Route information 
+    | Title | Key in database | Form Validation | Data Type |
+    | ------- | ------ | --------------- | -------- |
+    | Trail Id | _id | No validation | ObjectId |
+    | Image url | image_url | url | string |
+    | Route Name | trail_name | Text | string |
+    | Terrain | terrain | Text | string |
+    | Start Point | start | Text | string |
+    | End Point | end | Text | string |
+    | Description | description | Text Area | string |
+    | Added by | created_by | Text | string |
 
 ## Validation and Testing
 
