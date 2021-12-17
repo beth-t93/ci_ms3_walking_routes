@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="col s12 m12 l12">
+    <div class="col s12 m12 l12 err">
         <h1>Error 404</h1>
 		<h2>Oops! Something went wrong!</h2>
-        <a href="{{ url_for('trails') }}" class="btns">Go Home</a>
+        <a role="button" href="{{ url_for('trails') }}" class="trails-btn btn submit-btn btn-sm err-btn">Go Home</a>
     </div>
 {% endblock %}

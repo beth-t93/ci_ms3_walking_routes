@@ -166,3 +166,9 @@
     text-decoration: none;
     color:#3c6e71;
 }
+
+/* error pages */
+.err {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
