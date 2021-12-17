@@ -206,8 +206,7 @@ The homepage is made up of:
 
 
 #### Feature 4 - Add a Route Page
-- This page contains a simple form allowing users to register.
-- There is also a link directing users who already have an account to login.
+- This page contains a simple form allowing users to add a route to the site.
 
 ##### Add Route Form
 ![images](docs/features/feature-add-form.png)
@@ -219,9 +218,8 @@ The homepage is made up of:
 9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
 
 
-#### Feature 4 - Edit a Route Page
-- This page contains a simple form allowing users to register.
-- There is also a link directing users who already have an account to login.
+#### Feature 5 - Edit a Route Page
+- This page contains a simple form allowing users to edit and exisiting route.
 
 ##### Edit Route Form
 ![images](docs/features/feature-edit-form.png)
@@ -232,6 +230,46 @@ The homepage is made up of:
 1. As a visitor I want the site to be easy and simple to use.
 5. As a visitor I would like to be able to update routes I have already added to the site
 9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
+
+
+#### Feature 6 - Profile Page
+- This page contains a breif introduction, informing the user they are on their profile page.
+- The page also displays all the routes that the user has added, with the addidition of edit and delete buttons on each card.
+
+##### Introduction
+![images](docs/features/feature-profile-intro.png)
+- This lets the user know where they are on the site quickly and easily. It also tells the user what they can do on this page.
+
+###### User stories covered by this feautre:
+1. As a visitor I want the site to be easy and simple to use.
+10. As a site owner I want the purpose of the site to be clear to each user.
+
+##### Routes
+![images](docs/features/feature-profile-cards.png)
+- This allows the user to see the routes they have added with all the details easy to see and read through.
+
+###### User stories covered by this feautre:
+1. As a visitor I want the site to be easy and simple to use.
+2. As a visitor I want the site to be colourful and eye-catching, as well as be easy to read.
+7. As a visitor I would like to be able to see an image from the route
+
+##### Edit and Delete Buttons
+![images]( docs/features/feature-profile-edit-delete.png)
+- This allows the user to edit or delete a route from their profile.
+- This feature is only accessible if the user is logged in.
+- Users can only edit and delete routes they have added themselves.
+
+###### User stories covered by this feautre:
+1. As a visitor I want the site to be easy and simple to use.
+5. As a visitor I would like to be able to update routes I have already added to the site
+6. As a visitor I would like to be able to delete routes I have previously added to the site
+9. As a site owner I want users to be able to view, add, edit and delete routes on the site.
+
+
+
+
+
+
 
 
 ## Future Features
