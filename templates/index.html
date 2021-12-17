@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <!-- used code from Stackoverflow to fix issue with image height being 0 -->
+    <!-- used code from Stackoverflow to fix issue with image height being 0 https://stackoverflow.com/questions/53500221/css-hero-image-height-issue -->
     <!-- image from https://www.pexels.com/photo/brown-and-gray-mountains-near-body-of-water-under-white-cloudy-sky-4538764/ -->
     <div class="hero">
     <div class="hero-image-container">
@@ -13,6 +13,7 @@
     </div>
     </div>
     
+    <!-- Card containing all the information about each route -->
     <div class="container trail-card">
         <div class="row">
             {% for route in trails %}
