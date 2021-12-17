@@ -277,15 +277,17 @@ The area covered would also expand, as the routes on the site are currently all 
 ## Information Architecture
 ### Data Storage
 #### User Information
+
     | Title | Key in database | Form Validation | Data Type |
-    | ------- | ------ | --------------- | -------- |
+    | ------| --------------- | --------------- | --------- |
     | Account Id | _id | No validation | ObjectId |
     | Username | name | Text | string |
     | Password | password | Text | string |
 
 ### Route information 
+
     | Title | Key in database | Form Validation | Data Type |
-    | ------- | ------ | --------------- | -------- |
+    | ----- | --------------- | --------------- | --------- |
     | Trail Id | _id | No validation | ObjectId |
     | Image url | image_url | url | string |
     | Route Name | trail_name | Text | string |
@@ -475,14 +477,14 @@ touch .gitignore
 5. Double check in the gitignore file that you see ".env" and "pycache/"
 6. Go to the env.py file and add the following:
 
-    ```
-    import os
-    os.environ["PORT"] = "5000"
-    os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
-    os.environ["DEBUG"] = "True"
-    os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
-    os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
-    ```
+```
+import os
+os.environ["PORT"] = "5000"
+os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+os.environ["DEBUG"] = "True"
+os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
+```
 
 7. Go to app.py file and import the following:
 ```
