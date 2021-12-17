@@ -43,7 +43,7 @@
 .hero .hero-image:after {
     content:'';
     display:block;
-    padding-bottom: 56.25%;
+    padding-bottom: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
 }
 
